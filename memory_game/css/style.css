@@ -1,5 +1,24 @@
 body {
     text-align: center;
+    margin: 0;
+}
+
+header {
+    background-color: #ff0059;
+    color: white;
+    padding: 30px 20px;
+    margin: 0;
+}
+
+nav {
+    background-color: #0080ff;
+    color: white;
+    padding: 20px 0;
+}
+
+main {
+    width: 850px;
+    margin: 35px auto;
 }
 
 h1, h2 {
@@ -11,4 +30,13 @@ h1, h2 {
 
 p {
     font-family: "Roboto", sans-serif;
+}
+
+a {
+    margin: 0 20px;
+    color: white;
+}
+
+img {
+    margin: 40px 8px;
 }
