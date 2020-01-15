@@ -21,7 +21,7 @@ body {
 /* =============================
 TYPOGRAPHY
 ================================ */
-h1, h2 {
+h1, h2, h3 {
   text-transform: uppercase;
 }
 
@@ -38,6 +38,18 @@ h2 {
   letter-spacing: 0.05em;
   font-weight: 600;
   font-size: 20px;
+}
+
+h3 {
+  color: #0D2C40;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+h3 span {
+  font-size: 22px;
+  font-weight: 800;
 }
 
 p {
@@ -79,12 +91,24 @@ nav {
 }
 
 /* =============================
-MAIN SECTION
+MAIN
 ================================ */
 
 main {
   width: 850px;
   margin: 35px auto;
+}
+
+button {
+  background-color: #F15B31;
+  color: white;
+  padding: 10px;
+  border: none;
+  margin-top: 20px;
+  font-size: 18px;
+  font-family: "Raleway", sans-serif;
+  line-height: 26px;
+  text-transform: uppercase;
 }
 
 
