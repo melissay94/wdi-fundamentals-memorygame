@@ -13,32 +13,43 @@ function createPlayingCard(name, panel, cardImage) {
     cards.push(card);
 }
 
-createPlayingCard("winnie", 1, "images/meme_2_first_panel.jpg");
-createPlayingCard("winnie", 2, "images/meme_2_second_panel.jpg");
-createPlayingCard("disappointed", 1, "images/meme_1_first_panel.jpg");
-createPlayingCard("disappointed", 2, "images/meme_1_second_panel.jpg");
+function createBoard() {
+    for (let i = 0; i < cards.length; i++) {
+        let cardElement = document.createElement("img");
+        cardElement.setAttribute("src", "images/card_front.jpg");
+        cardElement.setAttribute("data-id", i);
+        cardElement.addEventListener('click', flipCard);
+        document.getElementById("game-board").appendChild(cardElement);
+    }
+}
 
 function checkForMatch() {
     
     if (cardsInPlay.length === 2) {
         if (cardsInPlay[0] === cardsInPlay[1]) {
-            console.log("You found a match!");
+            alert("You found a match!");
         } else {
-            console.log("Sorry, try again.");
+            alert("Sorry, try again.");
         }
     }
 }
 
-function flipCard(cardId) {
+function flipCard() {
+
+    console.log(this);
+    let cardId = this.getAttribute("data-id");
     
     console.log("User flipped " + cards[cardId].name);
     cardsInPlay.push(cards[cardId].name);
 
-    console.log("Card Image: " + cards[cardId].cardImage);
-    console.log("Panel Number: " + cards[cardId].panel);
+    this.setAttribute("src", cards[cardId].cardImage);
 
     checkForMatch();
 }
 
-flipCard(0);
-flipCard(2);
+createPlayingCard("winnie", 1, "images/meme_2_first_panel.jpg");
+createPlayingCard("disappointed", 2, "images/meme_1_second_panel.jpg");
+createPlayingCard("winnie", 2, "images/meme_2_second_panel.jpg");
+createPlayingCard("disappointed", 1, "images/meme_1_first_panel.jpg");
+
+createBoard();
