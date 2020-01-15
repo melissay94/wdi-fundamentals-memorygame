@@ -16,7 +16,7 @@ function createPlayingCard(name, panel, cardImage) {
 function createBoard() {
     for (let i = 0; i < cards.length; i++) {
         let cardElement = document.createElement("img");
-        cardElement.setAttribute("src", "images/card_front.jpg");
+        cardElement.setAttribute("src", "images/back.png");
         cardElement.setAttribute("data-id", i);
         cardElement.addEventListener('click', flipCard);
         document.getElementById("game-board").appendChild(cardElement);
@@ -47,9 +47,9 @@ function flipCard() {
     checkForMatch();
 }
 
-createPlayingCard("winnie", 1, "images/meme_2_first_panel.jpg");
-createPlayingCard("disappointed", 2, "images/meme_1_second_panel.jpg");
-createPlayingCard("winnie", 2, "images/meme_2_second_panel.jpg");
-createPlayingCard("disappointed", 1, "images/meme_1_first_panel.jpg");
+createPlayingCard("queen", "hearts", "images/queen-of-hearts.png");
+createPlayingCard("king", "diamonds", "images/king-of-diamonds.png");
+createPlayingCard("king", "hearts", "images/king-of-hearts.png");
+createPlayingCard("queen", "diamonds", "images/queen-of-diamonds.png");
 
 createBoard();
